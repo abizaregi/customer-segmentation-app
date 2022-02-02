@@ -38,7 +38,7 @@ if submit:
         st.write("""
         #### Distribution of Job ####
         """)
-        
+        plot1 = df_selected.groupby('job').sum()['job'].round(2)
         st.bar_chart(df_selected['job'])
 
         st.write("""
