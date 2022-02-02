@@ -102,14 +102,6 @@ if submit:
         col1, col2 = st.columns(2)
 
         with col1:
-            code5 = '''
-            sns.scatterplot('age', 'balance', data=df_selected)
-            plt.xlabel('Age')
-            plt.ylabel('Balance')
-            plt.show()
-            st.pyplot()
-            '''
-            st.code(code5, language='python')
             st.write("""
             #### Before Clustering ####
             """)
@@ -120,32 +112,6 @@ if submit:
             st.pyplot()
 
         with col2:
-            code6 = '''
-            plt.scatter(x=df_selected[df_selected['Cluster_Prediction']==1]['age']
-                , y=df_selected[df_selected['Cluster_Prediction']==1]['balance'],
-                s=30, edgecolor='black', linewidth=0.3, c='blue', label='Cluster 1')
-            plt.scatter(x=df_selected[df_selected['Cluster_Prediction']==2]['age']
-                , y=df_selected[df_selected['Cluster_Prediction']==2]['balance'],
-                s=30, edgecolor='black', linewidth=0.3, c='red', label='Cluster 2')
-            plt.scatter(x=df_selected[df_selected['Cluster_Prediction']==3]['age']
-                , y=df_selected[df_selected['Cluster_Prediction']==3]['balance'],
-                s=30, edgecolor='black', linewidth=0.3, c='pink', label='Cluster 3')
-            plt.scatter(x=df_selected[df_selected['Cluster_Prediction']==4]['age']
-                , y=df_selected[df_selected['Cluster_Prediction']==4]['balance'],
-                s=30, edgecolor='black', linewidth=0.3, c='deepskyblue', label='Cluster 4')
-            plt.scatter(x=df_selected[df_selected['Cluster_Prediction']==0]['age']
-                , y=df_selected[df_selected['Cluster_Prediction']==0]['balance'],
-                s=30, edgecolor='black', linewidth=0.3, c='purple', label='Cluster 0')
-
-            plt.scatter(x=model.cluster_centers_[:,0], y=model.cluster_centers_[:,1], s=30, c='grey', label='Centroids', edgecolor='black', linewidth=0.3)
-            plt.legend(loc='right')
-            plt.xlabel('Age')
-            plt.ylabel('Balance')
-            plt.title('Clusters')
-            plt.show()
-            st.pyplot()
-            '''
-            st.code(code6, language='python')
             st.write("""
             #### After Clustering ####
             """)
@@ -172,9 +138,10 @@ if submit:
             plt.title('Clusters')
             plt.show()
             st.pyplot()
-        
-        code = '''
-        Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
+            
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            
+        code = '''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
         Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\n
         Cluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah\n 
         Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000\n
