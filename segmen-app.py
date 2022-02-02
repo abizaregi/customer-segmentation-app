@@ -18,7 +18,7 @@ sorted_job = sorted(df['job'].unique())
 selected_channel = st.sidebar.multiselect('Select Education', sorted_education_unique, sorted_education_unique)
 selected_month = st.sidebar.multiselect('Select Marital', sorted_marital_unique, sorted_marital_unique)
 selected_job = st.sidebar.multiselect('Select Job', sorted_job, sorted_job)
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 # Filtering data
 df_selected = df[(df['education'].isin(selected_channel)) & (df['marital'].isin(selected_month)) & (df['job'].isin(selected_job))]
 
@@ -138,8 +138,6 @@ if submit:
             plt.title('Clusters')
             plt.show()
             st.pyplot()
-            
-            st.set_option('deprecation.showPyplotGlobalUse', False)
             
         code = '''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
         Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\n
