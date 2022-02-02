@@ -38,10 +38,8 @@ if submit:
         st.write("""
         #### Distribution of Job ####
         """)
-        plt.subplots(figsize=(15,5))
-        sns.countplot(x='job', data=df_selected)
-        plt.show()
-        st.pyplot()
+        plot1 = df_selected.groupby('Month-Year').sum()['OrderQuantity'].round(2)
+        st.bar_chart(df_selected['job'])
 
         st.write("""
         #### Distribution of Marital ####
