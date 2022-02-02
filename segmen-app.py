@@ -38,18 +38,15 @@ if submit:
             return href
         st.markdown(filedownload(df_selected), unsafe_allow_html=True)
         
-        code1 = '''
-        plot1 = df_selected.groupby('job').sum()['balance']
-        st.bar_chart(plot1)'''
+        code1 = '''plot1 = df_selected.groupby('job').sum()['balance']\nst.bar_chart(plot1)'''
         st.code(code1, language='python')
         st.write("""
         #### Distribution of Job ####
         """)
-        plot1 = df_selected.groupby('job').sum()['balance']\nst.bar_chart(plot1)
+        plot1 = df_selected.groupby('job').sum()['balance']
+        st.bar_chart(plot1)
 
-        code2 = '''
-        plot2 = df_selected.groupby('marital').sum()['balance']
-        st.bar_chart(plot2)'''
+        code2 = '''plot2 = df_selected.groupby('marital').sum()['balance']\nst.bar_chart(plot2)'''
         st.code(code2, language='python')
         st.write("""
         #### Distribution of Marital ####
@@ -58,9 +55,7 @@ if submit:
         st.bar_chart(plot2)
 
 
-        code3 = '''
-        plot3 = df_selected.groupby('education').sum()['balance']
-        st.bar_chart(plot3)'''
+        code3 = '''plot3 = df_selected.groupby('education').sum()['balance']\nst.bar_chart(plot3)'''
         st.code(code3, language='python')        
         st.write("""
         #### Distribution of Education ####
@@ -68,9 +63,7 @@ if submit:
         plot3 = df_selected.groupby('education').sum()['balance']
         st.bar_chart(plot3)
         
-        code3 = '''
-        plot4 = df_selected.groupby('contact').sum()['balance']
-        st.bar_chart(plot4)'''
+        code3 = '''plot4 = df_selected.groupby('contact').sum()['balance']\nst.bar_chart(plot4)'''
         st.code(code3, language='python') 
         st.write("""
         #### Distribution of Contact ####
@@ -78,7 +71,7 @@ if submit:
         plot4 = df_selected.groupby('contact').sum()['balance']
         st.bar_chart(plot4)
         
-        code7 = '''sns.scatterplot('age', 'balance', hue='term_deposit', data=df_selected)plt.show()st.pyplot()
+        code7 = '''sns.scatterplot('age', 'balance', hue='term_deposit', data=df_selected)\nplt.show()\nst.pyplot()
         '''
         st.code(code7, language='python')
         st.write("""
