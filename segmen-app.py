@@ -111,7 +111,7 @@ if submit:
         plt.show()
         st.pyplot()
 
-        st.write('''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas
+        st.markdown('''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas
         Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi
         Cluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah
         Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000
