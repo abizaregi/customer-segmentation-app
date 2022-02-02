@@ -27,12 +27,12 @@ submit = st.button('login')
 if submit:
     if (name == "Abizar Egi") & (pw == "testapp"):
         st.header('Display Data Selected in Sidebar')
-        st.dataframe(df_selected)
         st.write('Data Shape: ' + str(df_selected.shape[0]) + ' rows and ' + str(df_selected.shape[1]) + ' columns.')
+        st.dataframe(df_selected)
         def filedownload(df):
             csv = df.to_csv(index=False)
             b64 = base64.b64encode(csv.encode()).decode()  # strings <-> bytes conversions
-            href = f'<a href="data:file/csv;base64,{b64}" download="sales-data.csv">Download CSV File</a>'
+            href = f'<a href="data:file/csv;base64,{b64}" download="data-app.csv">Download CSV File</a>'
             return href
         st.markdown(filedownload(df_selected), unsafe_allow_html=True)
         
@@ -127,7 +127,7 @@ if submit:
         plt.title('Clusters')
         plt.show()
         st.pyplot()'''
-        st.code(code6, language='python)
+        st.code(code6, language='python')
         st.write("""
         #### After Clustering ####
         """)
