@@ -8,7 +8,7 @@ from sklearn.cluster import KMeans
 st.title('Customer Segmentation - Application')
 st.write("""***App to view customer segmentation based on personal and information data customer***""")
 st.sidebar.header("**Filter Display Data**")
-df = pd.read_csv('C:/Users/abiza/Downloads/AplikasiPython/data_app.csv', sep=';')
+df = pd.read_csv('data_app.csv', sep=';')
 
 # Sidebar
 sorted_education_unique = sorted(df['education'].unique())
