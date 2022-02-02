@@ -140,11 +140,7 @@ if submit:
             
         code = '''
         
-        Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
-        Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\n
-        Cluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah\n 
-        Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000\n
-        Cluster 5 = Cluster dengan balance  terendah
+        Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\nCluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\nCluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah\nCluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000\nCluster 5 = Cluster dengan balance  terendah
         '''
         st.code(code, language='python')
 
