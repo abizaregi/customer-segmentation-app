@@ -17,8 +17,7 @@ sorted_job = sorted(df['job'].unique())
 selected_channel = st.sidebar.multiselect('Select Education', sorted_education_unique, sorted_education_unique)
 selected_month = st.sidebar.multiselect('Select Marital', sorted_marital_unique, sorted_marital_unique)
 selected_job = st.sidebar.multiselect('Select Job', sorted_job, sorted_job)
-color = st.color_picker('Pick A Color', '#00f900')
-st.sidebar.write('The current color is', color)
+
 # Filtering data
 df_selected = df[(df['education'].isin(selected_channel)) & (df['marital'].isin(selected_month)) & (df['job'].isin(selected_job))]
 
