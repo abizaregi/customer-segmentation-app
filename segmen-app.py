@@ -23,7 +23,7 @@ df_selected = df[(df['education'].isin(selected_channel)) & (df['marital'].isin(
 st.write('''input name: Abizar Egi | input password: testapp''')
 name = st.text_input('input your account name: ')
 pw = st.text_input('input your account password: ')
-submit = st.button('submit')
+submit = st.button('login')
 if submit:
     if (name == "Abizar Egi") & (pw == "testapp"):
         st.header('Display Data Selected in Sidebar')
@@ -118,11 +118,11 @@ if submit:
         st.pyplot()
 
         st.write('''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
-Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\n  
-Cluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah\n 
-Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000\n 
-Cluster 5 = Cluster dengan balance  terendah''')
-        st.set_option('deprecation.showPyplotGlobalUse', False)
+                Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\n  
+                Cluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah\n 
+                Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000\n 
+                Cluster 5 = Cluster dengan balance  terendah''')
+
     else:
-        st.write('Masukan anda salah')
+        st.write('There was a problem with your login')
 
