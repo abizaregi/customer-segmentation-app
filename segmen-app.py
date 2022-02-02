@@ -39,7 +39,7 @@ if submit:
         #### Distribution of Job ####
         """)
         
-        plot1 = df_selected.groupby('job').sum()
+        plot1 = df_selected.groupby('job').sum()['balance']
         st.bar_chart(plot1)
              
         sns.countplot(x='job', data=df_selected)
