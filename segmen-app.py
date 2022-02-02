@@ -125,10 +125,10 @@ if submit:
         plt.show()
         st.pyplot()
 
-        st.write('Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
+        st.write('''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
         Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\n
         Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000\n
-        Cluster 5 = Cluster dengan balance  terendah')
+        Cluster 5 = Cluster dengan balance  terendah''')
 
     else:
         st.write('There was a problem with your login')
