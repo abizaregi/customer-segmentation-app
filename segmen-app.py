@@ -135,11 +135,12 @@ if submit:
             plt.legend(loc='right')
             plt.xlabel('Age')
             plt.ylabel('Balance')
-            plt.title('Clusters')
             plt.show()
             st.pyplot()
             
-        code = '''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
+        code = '''
+        
+        Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
         Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\n
         Cluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah\n 
         Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000\n
