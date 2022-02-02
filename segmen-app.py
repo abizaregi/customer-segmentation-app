@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import base64
 from sklearn.cluster import KMeans
 
+st.balloons()
 st.title('Customer Segmentation - Application')
 st.write("""***App to view customer segmentation based on personal and information data customer***""")
 st.sidebar.header("**Filter Display Data**")
@@ -14,6 +15,8 @@ df = pd.read_csv('data_app.csv', sep=';')
 sorted_education_unique = sorted(df['education'].unique())
 sorted_marital_unique = sorted(df['marital'].unique())
 sorted_job = sorted(df['job'].unique())
+color = st.color_picker('Pick A Color', '#00f900')
+st.sidebar.write('The current color is', color)
 selected_channel = st.sidebar.multiselect('Select Education', sorted_education_unique, sorted_education_unique)
 selected_month = st.sidebar.multiselect('Select Marital', sorted_marital_unique, sorted_marital_unique)
 selected_job = st.sidebar.multiselect('Select Job', sorted_job, sorted_job)
