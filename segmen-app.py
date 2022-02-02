@@ -45,8 +45,7 @@ if submit:
         st.write("""
         #### Distribution of Job ####
         """)
-        plot1 = df_selected.groupby('job').sum()['balance']
-        st.bar_chart(plot1)
+        plot1 = df_selected.groupby('job').sum()['balance']\nst.bar_chart(plot1)
 
         code2 = '''
         plot2 = df_selected.groupby('marital').sum()['balance']
