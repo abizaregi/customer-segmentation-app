@@ -38,44 +38,27 @@ if submit:
         st.write("""
         #### Distribution of Job ####
         """)
-        
         plot1 = df_selected.groupby('job').sum()['balance']
         st.bar_chart(plot1)
-             
-        sns.countplot(x='job', data=df_selected)
-        plt.show()
-        st.pyplot()
 
         st.write("""
         #### Distribution of Marital ####
         """)
-        sns.countplot(x='marital', data=df_selected)
-        plt.show()
-        st.pyplot()
+        plot2 = df_selected.groupby('marital').sum()['balance']
+        st.bar_chart(plot2)
 
         st.write("""
         #### Distribution of Education ####
         """)
-        sns.countplot(x='education', data=df_selected)
-        plt.show()
-        st.pyplot()
+        plot3 = df_selected.groupby('education').sum()['balance']
+        st.bar_chart(plot3)
         
         st.write("""
         #### Distribution of Contact ####
         """)
-        sns.countplot(x='contact', data=df_selected)
-        plt.show()
-        st.pyplot()
-
-        st.write("""
-        #### Distribution of Age ####
-        """)
-        df_selected.hist('age', bins=35)
-        plt.ylabel('Count')
-        plt.xlabel('Age')
-        plt.show()
-        st.pyplot()
-
+        plot4 = df_selected.groupby('contact').sum()['balance']
+        st.bar_chart(plot4)
+        
         st.write("""
         #### Age to Balance, Colored by Term Deposit ####
         """)
@@ -128,9 +111,10 @@ if submit:
         plt.show()
         st.pyplot()
 
-        st.write('''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\n
-        Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\n
-        Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000\n
+        st.write('''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas
+        Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi
+        Cluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah
+        Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000
         Cluster 5 = Cluster dengan balance  terendah''')
 
     else:
