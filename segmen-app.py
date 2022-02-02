@@ -38,8 +38,9 @@ if submit:
         st.write("""
         #### Distribution of Job ####
         """)
-        plot1 = df_selected.groupby('job').sum()['job'].round(2)
-        st.bar_chart(df_selected['job'])
+        sns.countplot(x='job', data=df_selected)
+        plt.show()
+        st.pyplot()
 
         st.write("""
         #### Distribution of Marital ####
