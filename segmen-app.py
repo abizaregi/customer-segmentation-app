@@ -58,22 +58,6 @@ if submit:
         st.pyplot()
 
         st.write("""
-        #### Distribution of Contact ####
-        """)
-        sns.countplot(x='contact', data=df_selected)
-        plt.show()
-        st.pyplot()
-
-        st.write("""
-        #### Distribution of Age ####
-        """)
-        df_selected.hist('age', bins=35)
-        plt.ylabel('Count')
-        plt.xlabel('Age')
-        plt.show()
-        st.pyplot()
-
-        st.write("""
         #### Age to Balance, Colored by Term Deposit ####
         """)
         sns.scatterplot('age', 'balance', hue='term_deposit', data=df_selected)
