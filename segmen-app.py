@@ -35,24 +35,38 @@ if submit:
             href = f'<a href="data:file/csv;base64,{b64}" download="sales-data.csv">Download CSV File</a>'
             return href
         st.markdown(filedownload(df_selected), unsafe_allow_html=True)
+        
+        code1 = '''plot1 = df_selected.groupby('job').sum()['balance']
+        st.bar_chart(plot1)'''
+        st.code(code1, language='python')
         st.write("""
         #### Distribution of Job ####
         """)
         plot1 = df_selected.groupby('job').sum()['balance']
         st.bar_chart(plot1)
 
+        code2 = '''plot2 = df_selected.groupby('marital').sum()['balance']
+        st.bar_chart(plot2)'''
+        st.code(code2, language='python')
         st.write("""
         #### Distribution of Marital ####
         """)
         plot2 = df_selected.groupby('marital').sum()['balance']
         st.bar_chart(plot2)
 
+
+        code3 = '''plot3 = df_selected.groupby('education').sum()['balance']
+        st.bar_chart(plot3)'''
+        st.code(code3, language='python')        
         st.write("""
         #### Distribution of Education ####
         """)
         plot3 = df_selected.groupby('education').sum()['balance']
         st.bar_chart(plot3)
         
+        code3 = '''plot4 = df_selected.groupby('contact').sum()['balance']
+        st.bar_chart(plot4)'''
+        st.code(code3, language='python') 
         st.write("""
         #### Distribution of Contact ####
         """)
@@ -110,12 +124,9 @@ if submit:
         plt.title('Clusters')
         plt.show()
         st.pyplot()
-
-        st.markdown('''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas
-        Cluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi
-        Cluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah
-        Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000
-        Cluster 5 = Cluster dengan balance  terendah''')
+        
+        st.write('''Cluster 1 = Customer rata-rata  berumur 20 - 60 dengan balance  10.000 keatas\nCluster 2 = Cluster dengan jumlah  customer terendah, akan tetapi  memiliki balance tertinggi\nCluster 3 = Customer berumur 20 -  85 tahun dengan balance 10.000  kebawah\n 
+        Cluster 4 = Cluster rata-rata  berumur 22 - 60 dengan balance  15.000 - 40.000\nCluster 5 = Cluster dengan balance  terendah''')
 
     else:
         st.write('There was a problem with your login')
